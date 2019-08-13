@@ -1,3 +1,4 @@
+//0x1检测“/dev/socket/qemud”，“/dev/qemu_pipe”这两个通道
 JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkPipes(JNIEnv* env,jclass thiz){
 	jstring jstr1 = (*env)->NewStringUTF(env,"/dev/socket/qemud");
 	jstring jstr2 = (*env)->NewStringUTF(env,"/dev/qemu_pipe");
@@ -67,7 +68,7 @@ JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkPhoneN
 	LOGV("jo_getLine1Number:%s",number);
 	return (jstring)jo_getLine1Number;
 }
-0×5检测设备IDS是不是"000000000000000"
+//0×5检测设备IDS是不是"000000000000000"
 JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkDeviceIDS(JNIEnv*env,jclassthiz,jobjectmContext){
 	jclass jc_context = (*env)->FindClass(env,"android/content/Context");
 	jmethodID jm_getSystemService = (*env)->GetMethodID(env,jc_context,"getSystemService","(Ljava/lang/String;)Ljava/lang/Object;");
@@ -81,7 +82,7 @@ JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkDevice
 	LOGV("deviceid:%s",cdeviceid);
 	return (jstring)deviceid;
 }
-0×6检测imsiid是不是"310260000000000"
+//0×6检测imsiid是不是"310260000000000"
 JNIEXPORT jstringJNICALLJava_com_example_findemulator_MainActivity_checkImsiIDS(JNIEnv*env,jclassthiz,jobjectmContext){
 	jclass jc_context = (*env)->FindClass(env,"android/content/Context");
 	jmethodID jm_getSystemService = (*env)->GetMethodID(env,jc_context,"getSystemService","(Ljava/lang/String;)Ljava/lang/Object;");
@@ -96,7 +97,7 @@ JNIEXPORT jstringJNICALLJava_com_example_findemulator_MainActivity_checkImsiIDS(
 	LOGV("SubscriberId:%s",cjo_SubscriberId);
 	return (jstring)jo_SubscriberId;
 }
-0×7检测手机上的一些硬件信息
+//0×7检测手机上的一些硬件信息
 JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkEmulatorBuild(JNIEnv*env,jclassthiz,jobjectmContext){
 	jclass jc_build = (*env)->FindClass(env,"android/os/Build");
 	//Board 
