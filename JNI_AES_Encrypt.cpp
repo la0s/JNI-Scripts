@@ -1,6 +1,5 @@
 //http://mydevspace.blogspot.com/2015/05/android-ndkjni-aes.html
 jbyteArray aesencrypt128bit(JNIEnv* env, int appversion, int bitnumber, jbyteArray data){
-    // 자바에서 암호화 함수를 불러와서 암호화를 진행
     LOGD("NDK : %d / %d", appversion, bitnumber);
 
     // SecretKeySpec skeySpec = new SecretKeySpec(key.getBytes("UTF-8"), "AES");    
