@@ -22,6 +22,7 @@ JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkPipes(
 		return (*env)->NewStringUTF(env,"NotFindEmulator!");
 	}
 }
+
 //0×2检测驱动文件内容，读取文件内容，然后检查已知QEmu的驱动程序的列表（未完成）
 //0×3检测模拟器上特有的几个文件
 JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkEmulatorFiles(JNIEnv* env,jclass thiz){
@@ -53,6 +54,7 @@ JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkEmulat
 		return (*env)->NewStringUTF(env,"NotFindEmulatorBycheckFiles!");
 	}
 }
+
 //0×4检测模拟器默认的电话号码
 JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkPhoneNumber(JNIEnv*env,jclassthiz,jobjectmContext){
 	jclass jc_context = (*env)->FindClass(env,"android/content/Context");
@@ -68,6 +70,7 @@ JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkPhoneN
 	LOGV("jo_getLine1Number:%s",number);
 	return (jstring)jo_getLine1Number;
 }
+
 //0×5检测设备IDS是不是"000000000000000"
 JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkDeviceIDS(JNIEnv*env,jclassthiz,jobjectmContext){
 	jclass jc_context = (*env)->FindClass(env,"android/content/Context");
@@ -82,6 +85,7 @@ JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkDevice
 	LOGV("deviceid:%s",cdeviceid);
 	return (jstring)deviceid;
 }
+
 //0×6检测imsiid是不是"310260000000000"
 JNIEXPORT jstringJNICALLJava_com_example_findemulator_MainActivity_checkImsiIDS(JNIEnv*env,jclassthiz,jobjectmContext){
 	jclass jc_context = (*env)->FindClass(env,"android/content/Context");
@@ -97,6 +101,7 @@ JNIEXPORT jstringJNICALLJava_com_example_findemulator_MainActivity_checkImsiIDS(
 	LOGV("SubscriberId:%s",cjo_SubscriberId);
 	return (jstring)jo_SubscriberId;
 }
+
 //0×7检测手机上的一些硬件信息
 JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkEmulatorBuild(JNIEnv*env,jclassthiz,jobjectmContext){
 	jclass jc_build = (*env)->FindClass(env,"android/os/Build");
@@ -142,6 +147,7 @@ JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkEmulat
 		return (*env)->NewStringUTF(env,"NotFindEmulatorBycheckBuild!");
 	}
 }
+
 //0×8检测手机运营商家
 JNIEXPORT jstring JNICALL Java_com_example_findemulator_MainActivity_checkOperatorNameAndroid(JNIEnv* env,jclass thiz,jobject mContext){
 	jclass jc_context = (*env)->FindClass(env,"android/content/Context");
